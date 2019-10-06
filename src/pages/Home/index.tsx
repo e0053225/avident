@@ -2,6 +2,30 @@ import * as React from "react";
 import { db } from "../../firebase";
 import { withAuthorization } from "../../firebase/withAuthorization";
 import { UserList } from "./UserList";
+import { SignOutButton } from "./SignOutButton";
+import {
+  IonToolbar,
+  IonTitle,
+  IonHeader,
+  IonButtons,
+  IonBackButton,
+  IonButton,
+  IonIcon,
+  IonMenuButton,
+  IonSearchbar,
+  IonSegment,
+  IonSegmentButton,
+  IonContent,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonLabel,
+  IonBadge,
+  IonRouterOutlet,
+  IonPage,
+  IonItem,
+  IonText
+} from "@ionic/react";
 
 class HomeComponent extends React.Component {
   constructor(props: any) {
@@ -22,12 +46,17 @@ class HomeComponent extends React.Component {
     const { users }: any = this.state;
 
     return (
-      <div>
-        <h2>Home Page</h2>
-        <p>The Home Page is accessible by every signed in user.</p>
-
-        {!!users && <UserList users={users} />}
-      </div>
+      <IonPage>
+        <IonHeader mode="ios" translucent={true}>
+          <IonToolbar color="primary" mode="ios">
+            <IonTitle>Home</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent fullscreen>
+          <IonText><h1>Welcome to Avident</h1></IonText>
+          <SignOutButton />
+        </IonContent>
+        </IonPage>
     );
   }
 }

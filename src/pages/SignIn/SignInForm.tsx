@@ -1,6 +1,18 @@
 import * as React from "react";
 import * as routes from "../../constants/routes";
 import { auth } from "../../firebase";
+import {
+  IonPage,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+  IonCol,
+  IonRow,
+  IonInput,
+  IonText,
+} from '@ionic/react';
 
 interface InterfaceProps {
   email?: string;
@@ -59,25 +71,55 @@ export class SignInForm extends React.Component<
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={event => this.onSubmit(event)}>
-        <input
-          value={email}
-          onChange={event => this.setStateWithEvent(event, "email")}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event => this.setStateWithEvent(event, "password")}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      <IonPage>
+              <IonHeader>
+                  <IonToolbar color="primary">
+                      <IonTitle>Sign In</IonTitle>
+                  </IonToolbar>
+              </IonHeader>
 
-        {error && <p>{error.message}</p>}
-      </form>
+              <IonContent>
+                  <IonRow class="row">
+                      <div>
+                          <IonText><h2 no-margin margin-vertical className="text-center">Sign In</h2></IonText>
+                      </div>
+                  </IonRow>
+                  <IonRow>
+                      <IonCol>
+                          <IonInput
+                              name="email"
+                              value={email}
+                              onIonChange={event => this.setStateWithEvent(event, "email")}
+                              clearInput
+                              type="email"
+                              placeholder="Email"
+                              class="input"
+                              padding-horizontal
+                              clear-input="true"></IonInput>
+                      </IonCol>
+                  </IonRow>
+                  <IonRow>
+                      <IonCol>
+                          <IonInput
+                              clearInput
+                              name="password"
+                              value={password}
+                              onIonChange={event => this.setStateWithEvent(event, "password")}
+                              type="password"
+                              placeholder="Password"
+                              class="input"
+                              padding-horizontal
+                              clear-input="true"></IonInput>
+                      </IonCol>
+                  </IonRow>
+                  <IonRow>
+                      <IonCol>
+                          <IonButton disabled={isInvalid} onClick={event => this.onSubmit(event)} type="submit" expand="block" color="undefined" class="btn-transition"><strong className="white">Sign In</strong></IonButton>
+                      </IonCol>
+                  </IonRow>
+                  {error && <p>{error.message}</p>}
+              </IonContent >
+          </IonPage >
     );
   }
 
