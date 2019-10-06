@@ -1,14 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { App } from "./components/App";
+import "./index.css";
+import registerServiceWorker from "./registerServiceWorker";
 
-// Ionic 4 styles
-import '@ionic/core/css/core.css';
-import '@ionic/core/css/ionic.bundle.css';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-serviceWorker.unregister();
-
+ReactDOM.render(<App />, document.getElementById("root"));
+registerServiceWorker();
