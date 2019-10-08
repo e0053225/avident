@@ -12,7 +12,9 @@ import {
   IonRow,
   IonInput,
   IonText,
-} from '@ionic/react';
+  IonGrid,
+  IonCard
+} from "@ionic/react";
 
 interface InterfaceProps {
   email?: string;
@@ -71,55 +73,63 @@ export class SignInForm extends React.Component<
     const isInvalid = password === "" || email === "";
 
     return (
-      <IonPage>
-              <IonHeader>
-                  <IonToolbar color="primary">
-                      <IonTitle>Sign In</IonTitle>
-                  </IonToolbar>
-              </IonHeader>
-
-              <IonContent>
-                  <IonRow class="row">
-                      <div>
-                          <IonText><h2 no-margin margin-vertical className="text-center">Sign In</h2></IonText>
-                      </div>
-                  </IonRow>
-                  <IonRow>
-                      <IonCol>
-                          <IonInput
-                              name="email"
-                              value={email}
-                              onIonChange={event => this.setStateWithEvent(event, "email")}
-                              clearInput
-                              type="email"
-                              placeholder="Email"
-                              class="input"
-                              padding-horizontal
-                              clear-input="true"></IonInput>
-                      </IonCol>
-                  </IonRow>
-                  <IonRow>
-                      <IonCol>
-                          <IonInput
-                              clearInput
-                              name="password"
-                              value={password}
-                              onIonChange={event => this.setStateWithEvent(event, "password")}
-                              type="password"
-                              placeholder="Password"
-                              class="input"
-                              padding-horizontal
-                              clear-input="true"></IonInput>
-                      </IonCol>
-                  </IonRow>
-                  <IonRow>
-                      <IonCol>
-                          <IonButton disabled={isInvalid} onClick={event => this.onSubmit(event)} type="submit" expand="block" color="undefined" class="btn-transition"><strong className="white">Sign In</strong></IonButton>
-                      </IonCol>
-                  </IonRow>
-                  {error && <p>{error.message}</p>}
-              </IonContent >
-          </IonPage >
+      <IonCard class="signin-box">
+      <IonGrid>
+            <IonRow class="row">
+                <IonText>
+                  <h2 no-margin margin-vertical className="text-center">
+                    Sign In
+                  </h2>
+                </IonText>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <IonInput
+                  name="email"
+                  value={email}
+                  onIonChange={event => this.setStateWithEvent(event, "email")}
+                  clearInput
+                  type="email"
+                  placeholder="Email"
+                  class="input"
+                  padding-horizontal
+                  clear-input="true"
+                ></IonInput>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <IonInput
+                  clearInput
+                  name="password"
+                  value={password}
+                  onIonChange={event =>
+                    this.setStateWithEvent(event, "password")
+                  }
+                  type="password"
+                  placeholder="Password"
+                  class="input"
+                  padding-horizontal
+                  clear-input="true"
+                ></IonInput>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <IonButton
+                  disabled={isInvalid}
+                  onClick={event => this.onSubmit(event)}
+                  type="submit"
+                  expand="block"
+                  color="primary"
+                >
+                  <strong className="white">Sign In</strong>
+                </IonButton>
+              </IonCol>
+            </IonRow>
+            {error && <p>{error.message}</p>}
+            </IonGrid>
+            </IonCard>
     );
   }
 

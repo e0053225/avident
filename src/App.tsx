@@ -15,6 +15,7 @@ import './App.css';
 import { firebase } from "./firebase";
 import { withAuthentication } from "./firebase/withAuthentication";
 import { Home } from './pages/Home';
+import { Dashboard } from './pages/Dashboard';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
 
@@ -43,6 +44,7 @@ class AppComponent extends Component {
           <IonRouterOutlet>
             <Route path={ROUTES.HOME} component={Home} exact={true} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} exact={true} />
+            <Route path={ROUTES.DASHBOARD} component={Dashboard} exact={true} />
             <Route exact path="/" render={() => <Redirect to={ROUTES.HOME} />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
