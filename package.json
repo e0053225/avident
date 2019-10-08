@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/core": "1.2.1",
+    "@capacitor/ios": "^1.2.1",
     "@ionic/core": "^4.10.0",
     "@ionic/react": "^4.10.0-rc.3",
     "@ionic/react-router": "^4.10.0-rc.3",
@@ -41,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@capacitor/cli": "1.2.1"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "avident",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
