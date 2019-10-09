@@ -1,6 +1,61 @@
 .top-row{
-    background: navy;
+    background: #112B52;
 }
 .header{
-    background: navy;
+    background: #112B52;
+    text-align: center;
+    padding: 8px;
+}
+.welcome-text{
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+}
+.welcome-text-box{
+    padding: 25px 20px;
+}
+.card-title{
+    text-align: center;
+}
+.task-list{
+    height: 330px;
+    padding: 0;
+} 
+.status-button{
+    width: 80px;
+}
+.clear-button{
+    padding: 0px;
+}
+.card-icon{
+    padding: 0px;
+    text-align: center;
+}
+.icon-size{
+    font-size: 100px;
+    padding-bottom: 15px;
+    color: #112B52;
+}
+.header-card{
+    width: 170px;
+    height: 150px;
+}
+.header-card-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px
+}
+.header-card-content{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 0px 0px 0px;
+    color: maroon;
+}
+.header-card-footer{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
 }
