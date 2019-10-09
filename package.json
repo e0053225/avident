@@ -45,6 +45,10 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@capacitor/cli": "1.2.1"
+=======
+    "dotenv": "^8.1.0"
+>>>>>>> b28a08638fd78af56925255c2ac3ad5a8233c63f
   }
 }

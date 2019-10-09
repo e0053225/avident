@@ -19,6 +19,8 @@ import { Dashboard } from './pages/Dashboard';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
 
+require('dotenv').config()
+
 class AppComponent extends Component {
 
     constructor(props: any) {
