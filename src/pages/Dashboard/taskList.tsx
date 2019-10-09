@@ -30,8 +30,8 @@ import {
   IonImg,
   IonProgressBar
 } from "@ionic/react";
-import { closeCircle } from "ionicons/icons";
 import planeImg from "../../assets/imgs/SIA-B747.png";
+import * as ROUTES from "../../constants/routes";
 
 class TaskListComponent extends Component {
   constructor(props: any) {
@@ -79,7 +79,7 @@ class TaskListComponent extends Component {
         <IonCardContent class="task-list">
           <IonContent>
             <IonList>
-              <IonCard button color="light">
+              <IonCard button href={ROUTES.TASK} color="light">
                 <IonCardHeader class="ion-no-padding">
                   <h1>TASK 32-11-02-004-001</h1>
                 </IonCardHeader>

@@ -18,6 +18,7 @@ import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
+import { Task } from './pages/Task';
 
 require('dotenv').config()
 
@@ -47,6 +48,7 @@ class AppComponent extends Component {
             <Route path={ROUTES.HOME} component={Home} exact={true} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} exact={true} />
             <Route path={ROUTES.DASHBOARD} component={Dashboard} exact={true} />
+            <Route path={ROUTES.TASK} component={Task} exact={true} />
             <Route exact path="/" render={() => <Redirect to={ROUTES.HOME} />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">

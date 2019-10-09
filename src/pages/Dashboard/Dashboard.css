@@ -18,7 +18,7 @@
     text-align: center;
 }
 .task-list{
-    height: 330px;
+    height: 300px;
     padding: 0;
 } 
 .status-button{
@@ -58,4 +58,21 @@
     font-size: 12px;
     font-weight: bold;
     padding: 10px;
+}
+.task-card-title{
+    background: #112B52;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+.reference-list{
+    height: 150px;
+    padding: 0;
+}
+.reference-card-title{
+    background: #112B52;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+
 }
