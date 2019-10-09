@@ -1,7 +1,6 @@
 import * as React from "react";
 import { db } from "../../firebase";
 import { withAuthorization } from "../../firebase/withAuthorization";
-import { UserList } from "./UserList";
 import { SignOutButton } from "./SignOutButton";
 import {
   IonToolbar,
@@ -26,7 +25,7 @@ import {
   IonItem,
   IonText
 } from "@ionic/react";
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from "../../constants/routes";
 
 class HomeComponent extends React.Component {
   constructor(props: any) {
@@ -54,11 +53,15 @@ class HomeComponent extends React.Component {
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
-          <IonText><h1>Welcome to Avident</h1></IonText>
-          <IonButton color="primary" href={ROUTES.DASHBOARD}>Go to dashboard</IonButton>
+          <IonText>
+            <h1>Welcome to Avident</h1>
+          </IonText>
+          <IonButton color="primary" href={ROUTES.DASHBOARD}>
+            Go to dashboard
+          </IonButton>
           <SignOutButton />
         </IonContent>
-        </IonPage>
+      </IonPage>
     );
   }
 }
