@@ -122,83 +122,108 @@ class TaskComponent extends React.Component {
                     </IonText>
                   </IonCardTitle>
                   <IonCardContent class="task-list">
-                  <IonContent>
-                    <IonList>
-                      <IonItem>
-                        <IonLabel>Pokémon Yellow</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Mega Man X</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>The Legend of Zelda</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Pac-Man</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Super Mario World</IonLabel>
-                      </IonItem>
-                    </IonList>
-                  </IonContent>
+                    <IonContent>
+                      <IonList>
+                        <IonItem>
+                          <IonButton color="success" size="large">
+                            10
+                          </IonButton>
+                          <IonLabel>
+                            Remove the lockbolt (16), the nut (15), the shim
+                            (17),
+                            <br /> and the bolt(14) from the shock strut (Detail
+                            E).
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonButton color="warning" size="large">
+                            11
+                          </IonButton>
+                          <IonLabel>
+                            S 034-014 Remove the truck lock (AMM 32-11-23/401).
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonButton color="warning" size="large">
+                            12
+                          </IonButton>
+                          <IonLabel>
+                            S 034-015 (12) Remove the lockbolts (5), the
+                            lubrication inserts (3), <br /> the nuts (2), the
+                            washers (1), and the bolts (7) from each ...
+                          </IonLabel>
+                        </IonItem>
+                      </IonList>
+                    </IonContent>
                   </IonCardContent>
                 </IonCard>
               </IonCol>
               <IonCol>
                 <IonCard color="light">
                   <IonCardTitle class="reference-card-title">
-                    <IonText color="light">
-                      References
-                    </IonText>
+                    <IonText color="light">References</IonText>
                   </IonCardTitle>
                   <IonCardContent class="reference-list">
-                  <IonContent>
-                    <IonList>
-                      <IonItem>
-                        <IonLabel>Pokémon Yellow</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Mega Man X</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>The Legend of Zelda</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Pac-Man</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Super Mario World</IonLabel>
-                      </IonItem>
-                    </IonList>
-                  </IonContent>
+                    <IonContent>
+                      <IonList>
+                        <IonItem>
+                          <IonLabel>AMM 32-11-02 Figure 401</IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>AMM 09-11-00/201, Towing</IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>
+                            AMM 32-00-30/201, Landing Gear Door Locks
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>AMM 32-11-01/401, Wing Gear</IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>
+                            AMM 32-11-03/401, Wing Gear Drag Brace
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>AIPC 32-11-11 Fig. 2</IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>AIPC 32-11-14 Fig.2</IonLabel>
+                        </IonItem>
+                      </IonList>
+                    </IonContent>
                   </IonCardContent>
                 </IonCard>
                 <IonCard color="light">
                   <IonCardTitle class="reference-card-title">
-                    <IonText color="light">
-                      Materials and Tools
-                    </IonText>
+                    <IonText color="light">Materials and Tools</IonText>
                   </IonCardTitle>
                   <IonCardContent class="reference-list">
-                  <IonContent>
-                    <IonList>
-                      <IonItem>
-                        <IonLabel>Pokémon Yellow</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Mega Man X</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>The Legend of Zelda</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Pac-Man</IonLabel>
-                      </IonItem>
-                      <IonItem>
-                        <IonLabel>Super Mario World</IonLabel>
-                      </IonItem>
-                    </IonList>
-                  </IonContent>
+                    <IonContent>
+                      <IonList>
+                        <IonItem color="dark">
+                          <IonHeader>Special Tools and Equipment</IonHeader>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>
+                            (1) OHME65B01201-1 - <br />
+                            Wing and Body Gear Overhead Mechanical Equipment
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>
+                            (2) 12PRE65B00161-1 - <br/>Pivot Pin Thread Protector
+                          </IonLabel>
+                        </IonItem>
+                        <IonItem color="dark">
+                          <IonHeader>Standard Tools and Equipment</IonHeader>
+                        </IonItem>
+                        <IonItem>
+                          <IonLabel>(1) Axle Jack and Adapter</IonLabel>
+                        </IonItem>
+                      </IonList>
+                    </IonContent>
                   </IonCardContent>
                 </IonCard>
               </IonCol>
