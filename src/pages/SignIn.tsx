@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import { SignInForm } from "./SignInForm";
+import { SignInForm } from "../components/SignInForm";
 import {
   IonPage,
   IonContent,
@@ -25,9 +25,6 @@ const SignInComponent = ({ history }: { [key: string]: any }) => (
   </IonHeader>
   <IonContent fullscreen={true} class="background-image">
   <IonGrid>
-    <IonRow><IonCol><h1></h1></IonCol></IonRow>
-    <IonRow><IonCol><h1></h1></IonCol></IonRow>
-    <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow><IonCol><h1></h1></IonCol></IonRow>

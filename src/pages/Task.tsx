@@ -1,6 +1,6 @@
 import * as React from "react";
-import { db } from "../../firebase";
-import { withAuthorization } from "../../firebase/withAuthorization";
+import { db } from "../firebase";
+import { withAuthorization } from "../firebase/withAuthorization";
 import {
   IonPage,
   IonContent,
@@ -31,8 +31,8 @@ import {
   IonProgressBar
 } from "@ionic/react";
 import { notifications } from "ionicons/icons";
-import * as ROUTES from "../../constants/routes";
-import planeImg from "../../assets/imgs/SIA-B747.png";
+import * as ROUTES from "../constants/routes";
+import planeImg from "../assets/imgs/SIA-B747.png";
 
 class TaskComponent extends React.Component {
   constructor(props: any) {

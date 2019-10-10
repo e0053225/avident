@@ -8,17 +8,28 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
+  IonTab
 } from '@ionic/react';
 import { home, logIn } from 'ionicons/icons';
 import './App.css';
 import { firebase } from "./firebase";
 import { withAuthentication } from "./firebase/withAuthentication";
 import { Home } from './pages/Home';
-import { Dashboard } from './pages/Dashboard';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
 import { Task } from './pages/Task';
+
+import "@ionic/core/css/core.css";
+import "@ionic/core/css/normalize.css";
+import "@ionic/core/css/structure.css";
+import "@ionic/core/css/typography.css";
+import "@ionic/core/css/padding.css";
+import "@ionic/core/css/float-elements.css";
+import "@ionic/core/css/text-alignment.css";
+import "@ionic/core/css/text-transformation.css";
+import "@ionic/core/css/flex-utils.css";
+import "@ionic/core/css/display.css";
 
 require('dotenv').config()
 
@@ -47,7 +58,6 @@ class AppComponent extends Component {
           <IonRouterOutlet>
             <Route path={ROUTES.HOME} component={Home} exact={true} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} exact={true} />
-            <Route path={ROUTES.DASHBOARD} component={Dashboard} exact={true} />
             <Route path={ROUTES.TASK} component={Task} exact={true} />
             <Route exact path="/" render={() => <Redirect to={ROUTES.HOME} />} />
           </IonRouterOutlet>
@@ -56,9 +66,9 @@ class AppComponent extends Component {
               <IonIcon icon={home}/>
               <IonLabel>Home</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="signIn" href={ROUTES.SIGN_IN}>
+            <IonTabButton tab="task" href={ROUTES.TASK}>
               <IonIcon icon={logIn}/>
-              <IonLabel>Sign In</IonLabel>
+              <IonLabel>Task</IonLabel>
             </IonTabButton>
           </IonTabBar>
         </IonTabs>

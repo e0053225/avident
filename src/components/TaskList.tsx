@@ -1,51 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
-import { withAuthorization } from "../../firebase/withAuthorization";
 import {
-  IonPage,
   IonContent,
-  IonHeader,
-  IonTitle,
   IonToolbar,
-  IonButton,
   IonCol,
   IonRow,
-  IonInput,
   IonText,
   IonGrid,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
-  IonAvatar,
-  IonChip,
   IonLabel,
-  IonBadge,
-  IonIcon,
   IonList,
-  IonItem,
   IonSegmentButton,
   IonSegment,
   IonImg,
   IonProgressBar
 } from "@ionic/react";
-import planeImg from "../../assets/imgs/SIA-B747.png";
-import * as ROUTES from "../../constants/routes";
+import planeImg from "../assets/imgs/SIA-B747.png";
+import * as ROUTES from "../constants/routes";
 
-class TaskListComponent extends Component {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      list: [],
-      selectedStatus: ""
-    };
-  }
-  public componentDidMount() {}
-
-  public render() {
-    return (
+const TaskListComponent = ({ history }: { [key: string]: any }) => (
       <IonCard color="light">
         <IonCardTitle class="header">
           <IonText color="light">Your Tasks</IonText>
@@ -54,21 +30,16 @@ class TaskListComponent extends Component {
           <div slot="end">
             <IonSegment>
               <IonSegmentButton
-                onIonSelect={() => this.setState({ selectedStatus: "New" })}
                 class="status-button"
               >
                 <IonLabel>New</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
-                onIonSelect={() => this.setState({ selectedStatus: "Started" })}
                 class="status-button"
               >
                 <IonLabel>Started</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
-                onIonSelect={() =>
-                  this.setState({ selectedStatus: "Completed" })
-                }
                 class="status-button"
               >
                 <IonLabel>Completed</IonLabel>
@@ -79,7 +50,7 @@ class TaskListComponent extends Component {
         <IonCardContent class="task-list">
           <IonContent>
             <IonList>
-              <IonCard button href={ROUTES.TASK} color="light">
+              <IonCard button onClick={() => history.push(ROUTES.TASK)} color="light">
                 <IonCardHeader class="ion-no-padding">
                   <h1>TASK 32-11-02-004-001</h1>
                 </IonCardHeader>
@@ -159,9 +130,5 @@ class TaskListComponent extends Component {
         </IonCardContent>
       </IonCard>
     );
-  }
-}
 
-const authCondition = (authUser: any) => !!authUser;
-
-export const TaskList = withAuthorization(authCondition)(TaskListComponent);
+export const TaskList = withRouter(TaskListComponent);

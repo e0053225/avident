@@ -1,6 +1,6 @@
 import * as React from "react";
-import * as routes from "../../constants/routes";
-import { auth } from "../../firebase";
+import * as routes from "../constants/routes";
+import { auth } from "../firebase";
 import {
   IonPage,
   IonContent,

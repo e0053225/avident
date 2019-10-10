@@ -1,32 +1,24 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import { withAuthorization } from "../../firebase/withAuthorization";
+import * as React from "react";
+import { db } from "../firebase";
+import { withAuthorization } from "../firebase/withAuthorization";
+import { SignOutButton } from "../components/SignOutButton";
 import {
   IonPage,
   IonContent,
-  IonHeader,
-  IonTitle,
   IonToolbar,
-  IonButton,
   IonCol,
   IonRow,
-  IonInput,
   IonText,
   IonGrid,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
   IonAvatar,
   IonChip,
   IonLabel,
   IonBadge,
   IonIcon,
-  IonList,
-  IonItem,
-  IonSegment,
-  IonSegmentButton
 } from "@ionic/react";
 import {
   notifications,
@@ -36,9 +28,9 @@ import {
   qrScanner
 } from "ionicons/icons";
 import "./Dashboard.css";
-import { TaskList } from "./taskList";
+import { TaskList } from "../components/TaskList";
 
-const DashboardComponent = ({ history }: { [key: string]: any }) => (
+const HomeComponent = ({ history }: { [key: string]: any }) => (
   <IonPage>
     <IonToolbar>
       <IonChip slot="end">
@@ -58,28 +50,41 @@ const DashboardComponent = ({ history }: { [key: string]: any }) => (
         <IonRow class="top-row">
           <IonCol size="4.5">
             <div className="welcome-text-box">
-            <IonText class="welcome-text">Welcome back, Randy!</IonText>
+              <IonText class="welcome-text">Welcome back, Randy!</IonText>
             </div>
+            <SignOutButton/>
           </IonCol>
           <IonCol size="2.5">
             <IonCard class="header-card" color="light">
               <IonCardTitle class="header-card-title">18/10/2019</IonCardTitle>
               <IonCardContent class="header-card-content">5</IonCardContent>
-              <IonCardContent class="header-card-footer">Scheduled Task Remaining</IonCardContent>
+              <IonCardContent class="header-card-footer">
+                Scheduled Task Remaining
+              </IonCardContent>
             </IonCard>
           </IonCol>
           <IonCol size="2.5">
-          <IonCard class="header-card" color="light">
-              <IonCardTitle class="header-card-title">Task Completed</IonCardTitle>
+            <IonCard class="header-card" color="light">
+              <IonCardTitle class="header-card-title">
+                Task Completed
+              </IonCardTitle>
               <IonCardContent class="header-card-content">56</IonCardContent>
-              <IonCardContent class="header-card-footer">You are level 17</IonCardContent>
+              <IonCardContent class="header-card-footer">
+                You are level 17
+              </IonCardContent>
             </IonCard>
           </IonCol>
           <IonCol size="2.5">
-          <IonCard class="header-card" color="light">
-              <IonCardTitle class="header-card-title">Total Points</IonCardTitle>
-              <IonCardContent class="header-card-content">379 pts</IonCardContent>
-              <IonCardContent class="header-card-footer">Redeem Points</IonCardContent>
+            <IonCard class="header-card" color="light">
+              <IonCardTitle class="header-card-title">
+                Total Points
+              </IonCardTitle>
+              <IonCardContent class="header-card-content">
+                379 pts
+              </IonCardContent>
+              <IonCardContent class="header-card-footer">
+                Redeem Points
+              </IonCardContent>
             </IonCard>
           </IonCol>
         </IonRow>
@@ -137,4 +142,4 @@ const DashboardComponent = ({ history }: { [key: string]: any }) => (
 
 const authCondition = (authUser: any) => !!authUser;
 
-export const Dashboard = withAuthorization(authCondition)(DashboardComponent);
+export const Home = withAuthorization(authCondition)(HomeComponent);
