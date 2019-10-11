@@ -18,7 +18,7 @@ import {
   IonChip,
   IonLabel,
   IonBadge,
-  IonIcon,
+  IonIcon
 } from "@ionic/react";
 import {
   notifications,
@@ -29,22 +29,11 @@ import {
 } from "ionicons/icons";
 import "./Dashboard.css";
 import { TaskList } from "../components/TaskList";
+import { HeaderBar } from "../components/HeaderBar";
 
 const HomeComponent = ({ history }: { [key: string]: any }) => (
   <IonPage>
-    <IonToolbar>
-      <IonChip slot="end">
-        <IonIcon icon={notifications} />
-        <IonBadge color="warning">3</IonBadge>
-      </IonChip>
-
-      <IonChip slot="end">
-        <IonLabel>Randy Tan</IonLabel>
-        <IonAvatar>
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-        </IonAvatar>
-      </IonChip>
-    </IonToolbar>
+    <HeaderBar />
     <IonContent scrollY={false}>
       <IonGrid>
         <IonRow class="top-row">
@@ -52,7 +41,7 @@ const HomeComponent = ({ history }: { [key: string]: any }) => (
             <div className="welcome-text-box">
               <IonText class="welcome-text">Welcome back, Randy!</IonText>
             </div>
-            <SignOutButton/>
+            <SignOutButton />
           </IonCol>
           <IonCol size="2.5">
             <IonCard class="header-card" color="light">

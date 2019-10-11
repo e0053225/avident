@@ -18,7 +18,7 @@ import { withAuthentication } from "./firebase/withAuthentication";
 import { Home } from './pages/Home';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
-import { Task } from './pages/Task';
+import { TaskOverview } from './pages/TaskOverview';
 
 import "@ionic/core/css/core.css";
 import "@ionic/core/css/normalize.css";
@@ -30,6 +30,7 @@ import "@ionic/core/css/text-alignment.css";
 import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
+import { Task } from './pages/Task';
 
 require('dotenv').config()
 
@@ -59,6 +60,7 @@ class AppComponent extends Component {
             <Route path={ROUTES.HOME} component={Home} exact={true} />
             <Route path={ROUTES.SIGN_IN} component={SignIn} exact={true} />
             <Route path={ROUTES.TASK} component={Task} exact={true} />
+            <Route path={ROUTES.TASK_OVERVIEW} component={TaskOverview} exact={true} />
             <Route exact path="/" render={() => <Redirect to={ROUTES.HOME} />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">

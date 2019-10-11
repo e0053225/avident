@@ -50,7 +50,7 @@ const TaskListComponent = ({ history }: { [key: string]: any }) => (
         <IonCardContent class="task-list">
           <IonContent>
             <IonList>
-              <IonCard button onClick={() => history.push(ROUTES.TASK)} color="light">
+              <IonCard button onClick={() => history.push(ROUTES.TASK_OVERVIEW)} color="light">
                 <IonCardHeader class="ion-no-padding">
                   <h1>TASK 32-11-02-004-001</h1>
                 </IonCardHeader>
