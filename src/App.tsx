@@ -8,8 +8,7 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs,
-  IonTab
+  IonTabs
 } from '@ionic/react';
 import { home, logIn } from 'ionicons/icons';
 import './App.css';
@@ -53,7 +52,7 @@ class AppComponent extends Component {
     }
   render() {
     return (
-      <IonApp>
+      <IonApp class="ios">
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>

@@ -1,15 +1,11 @@
 import * as React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import * as routes from "../constants/routes";
 import { firebase } from "../firebase";
 import { AuthUserContext } from "./AuthUserContext";
 
-interface InterfaceProps {
-  history?: any;
-}
-
 export const withAuthorization = (condition: any) => (Component: any) => {
-  class WithAuthorization extends React.Component<InterfaceProps, {}> {
+  class WithAuthorization extends React.Component<RouteComponentProps> {
     public componentDidMount() {
       firebase.auth.onAuthStateChanged(authUser => {
         if (!condition(authUser)) {
@@ -21,7 +17,7 @@ export const withAuthorization = (condition: any) => (Component: any) => {
     public render() {
       return (
         <AuthUserContext.Consumer>
-          {authUser => (authUser ? <Component /> : null)}
+          {authUser => (authUser ? <Component {...this.props}/> : null)}
         </AuthUserContext.Consumer>
       );
     }

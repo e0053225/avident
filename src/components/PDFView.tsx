@@ -48,8 +48,9 @@ class PDFViewer extends Component<Props> {
           file="/document.pdf"
           onLoadSuccess={this.onDocumentLoadSuccess}
         >
-          <Page height={1000} width={480} pageNumber={pageNumber} />
+          <Page height={900} width={450} pageNumber={pageNumber} />
         </Document>
+        <br/>
         <IonButton size="small" disabled={prevDisabled} onClick={this.prevPage}>
           Previous
         </IonButton>

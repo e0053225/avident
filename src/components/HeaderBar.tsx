@@ -5,12 +5,17 @@ import {
   IonBadge,
   IonIcon,
   IonLabel,
-  IonAvatar
+  IonAvatar,
+  IonButtons,
+  IonBackButton
 } from "@ionic/react";
 import { notifications } from "ionicons/icons";
 
 export const HeaderBar = () => (
   <IonToolbar>
+    <IonButtons slot="start">
+          <IonBackButton defaultHref="home" />
+        </IonButtons>
     <IonChip slot="end">
       <IonIcon icon={notifications} />
       <IonBadge color="warning">3</IonBadge>

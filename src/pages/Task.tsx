@@ -1,5 +1,6 @@
 import * as React from "react";
 import { withAuthorization } from "../firebase/withAuthorization";
+import { RouteComponentProps } from "react-router-dom";
 import {
   IonPage,
   IonContent,
@@ -21,7 +22,13 @@ import {
 import { HeaderBar } from "../components/HeaderBar";
 import PDFViewer from "../components/PDFView";
 
-const TaskComponent = ({ history }: { [key: string]: any }) => (
+const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
+  props: RouteComponentProps
+) => {
+  const [task, setTask] = React.useState();
+  const [step, setStep] = React.useState();
+  if (task && step) {
+    return (
   <IonPage>
     <HeaderBar />
     <IonContent scrollY={false}>
@@ -30,20 +37,30 @@ const TaskComponent = ({ history }: { [key: string]: any }) => (
           <IonCol>
             <div className="top-row">
               <IonText class="white">
-                TASK 32-11-02-004-001 <br />
-                Wing Landing Gear Shock Strut Removal
+                {task.taskNumber}
+              </IonText>
+              <br/>
+              <IonText class="white">
+                {task.taskName}
+              </IonText>
+              <hr/>
+              <IonText class="white">
+                Step: {step.stepNumber}/{task.totalSteps}
               </IonText>
             </div>
             <div>
               <IonText>
-                S 034-014 <br />
-                Remove the truck lock (AMM 32-11-23/401).
+                {step.stepInstruction}
+              </IonText>
+              <IonText>
+                {step.stepReference}
               </IonText>
             </div>
           </IonCol>
           <IonCol>
             <IonContent fullscreen={true}>
-              <PDFViewer pageNumber={8}/>
+              <IonText>Currently Viewing: {step.stepReference}</IonText>
+              <PDFViewer pageNumber={step.stepPage}/>
             </IonContent>
           </IonCol>
         </IonRow>
@@ -51,6 +68,12 @@ const TaskComponent = ({ history }: { [key: string]: any }) => (
     </IonContent>
   </IonPage>
 );
+} else if (props.location.state.selectedTask && props.location.state.selectedStep) {
+  setTask(props.location.state.selectedTask);
+  setStep(props.location.state.selectedStep);
+}
+return null;
+};
 
 const authCondition = (authUser: any) => !!authUser;
 
