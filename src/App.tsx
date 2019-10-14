@@ -19,6 +19,7 @@ import { Home } from './pages/Home';
 import { SignIn } from './pages/SignIn'
 import * as ROUTES from './constants/routes';
 import { TaskOverview } from './pages/TaskOverview';
+import { PartIdentification } from './pages/PartIdentification';
 
 import "@ionic/core/css/core.css";
 import "@ionic/core/css/normalize.css";
@@ -31,6 +32,7 @@ import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 import { Task } from './pages/Task';
+import { OrderPart } from './pages/OrderPart';
 
 require('dotenv').config()
 
@@ -61,6 +63,9 @@ class AppComponent extends Component {
             <Route path={ROUTES.SIGN_IN} component={SignIn} exact={true} />
             <Route path={ROUTES.TASK} component={Task} exact={true} />
             <Route path={ROUTES.TASK_OVERVIEW} component={TaskOverview} exact={true} />
+             <Route path={ROUTES.PART_IDENTIFICATION} component={PartIdentification} exact={true} />
+             <Route path={ROUTES.ORDER_PART} component={OrderPart} exact={true} />
+           
             <Route exact path="/" render={() => <Redirect to={ROUTES.HOME} />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
