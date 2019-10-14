@@ -2,36 +2,20 @@ import * as React from "react";
 import { db } from "../firebase";
 import { withAuthorization } from "../firebase/withAuthorization";
 import {
-  IonToolbar,
-  IonTitle,
-  IonHeader,
-  IonButtons,
-  IonBackButton,
-  IonMenuButton,
   IonSearchbar,
-  IonSegment,
-  IonSegmentButton,
   IonContent,
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonLabel,
-  IonBadge,
-  IonRouterOutlet,
   IonPage,
-  IonItem,
   IonText,
-  IonChip,
   IonIcon,
-  IonAvatar,
   IonGrid,
   IonCol,
   IonRow,
-  IonFab,
-  IonFabButton,
   IonCard,
+  IonButton,
   IonList,
-  IonButton
+  IonListHeader,
+  IonItem,
+  IonInput
 } from "@ionic/react";
 import { HeaderBar } from "../components/HeaderBar";
 
@@ -42,55 +26,62 @@ const OrderPartComponent = ({ history }: { [key: string]: any }) => (
       <IonGrid>
         <IonRow>
           <IonCol>
-            <div className="rowtop-">
-              <IonSearchbar value="Main Wheel 6'"></IonSearchbar>
-              <IonText class="white">
-                TASK 32-11-02-004-001 <br />
-                Wing Landing Gear Shock Strut Removal
-              </IonText>
-            </div>
+            <IonSearchbar value="Main Wheel 6'"></IonSearchbar>
+            <IonList>
+              <IonListHeader
+                style={{ background: "lightGrey", textAlign: "center" }}
+              >
+                <IonCol>Name</IonCol>
+                <IonCol>Part Number</IonCol>
+                <IonCol size="2">Quantity Left</IonCol>
+              </IonListHeader>
+              <IonItem style={{ textAlign: "center" }}>
+                <IonCol>Main wheel ECO 6' (Faeta)</IonCol>
+                <IonCol>K216A000</IonCol>
+                <IonCol size="2">0</IonCol>
+              </IonItem>
+              <IonItem style={{ textAlign: "center" }}>
+                <IonCol>Main wheel ECO POWER 6' (Faeta)</IonCol>
+                <IonCol>K226A000</IonCol>
+                <IonCol size="2">7</IonCol>
+              </IonItem>
+              <IonItem style={{ textAlign: "center" }}>
+                <IonCol>Main wheel 6' (Faeta)</IonCol>
+                <IonCol>K206A000</IonCol>
+                <IonCol size="2">4</IonCol>
+              </IonItem>
+            </IonList>
           </IonCol>
 
           <IonCol>
-            <IonContent class="header">Order Page</IonContent>
-          </IonCol>
-        </IonRow>
-        <IonRow>
-          <IonCol>
-            <IonGrid>
-              <IonRow>
-                <IonCol>Name</IonCol>
-                <IonCol>Part Number</IonCol>
-                <IonCol>Quantity Left</IonCol>
-              </IonRow>
-              <IonRow>
-                <IonCol>Main wheel ECO 6' (Faeta)</IonCol>
-                <IonCol>K216A000</IonCol>
-                <IonCol>0</IonCol>
-              </IonRow>
-              <IonRow>
-                <IonCol>Main wheel ECO POWER 6' (Faeta)</IonCol>
-                <IonCol>K226A000</IonCol>
-                <IonCol>7</IonCol>
-              </IonRow>
-              <IonRow>
-                <IonCol>Main wheel 6' (Faeta)</IonCol>
-                <IonCol>K206A000</IonCol>
-                <IonCol>4</IonCol>
-              </IonRow>
-            </IonGrid>
-          </IonCol>
-          <IonCol>
-            <IonRow>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMq-KXs6FWOGA_v8qgv0Q1Egw2XpRzn9mDQ9yHyE5ydkYJsmWE"></img>
-            </IonRow>
-            <IonRow>Main wheel ECO 6' (Faeta)</IonRow>
-            <IonRow>K216A000</IonRow>
-            <IonRow>Note: complete assembly including brake</IonRow>
-            <IonRow>$395</IonRow>
-            <IonRow>QTY:</IonRow>
-            <IonRow><IonIcon name="arrow-back"></IonIcon><IonCard>0</IonCard><IonIcon name="arrow-forward"></IonIcon></IonRow>
-            <IonRow><IonButton expand="block">Submit</IonButton></IonRow>
+            <div className="order-parts-header">
+              <IonText class="white">Order Page</IonText>
+            </div>
+            <img
+              width="500px"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMq-KXs6FWOGA_v8qgv0Q1Egw2XpRzn9mDQ9yHyE5ydkYJsmWE"
+            ></img>
+            <IonContent scrollY={false} style={{ textAlign: "center" }}>
+              <IonText>Part Name: Carabiner rated for 1 Ton</IonText> <hr/>
+              <IonText>Part Number: 2U704</IonText><hr/>
+              <IonText>Note: complete assembly including brake</IonText><hr/>
+              <IonText>Price: $395</IonText><br/>
+
+              <IonInput
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  width: "80px"
+                }}
+                color="dark"
+                inputmode="numeric"
+                placeholder="0"
+                type="number"
+              >
+                QTY:
+              </IonInput>
+              <IonButton>Send Order</IonButton>
+            </IonContent>
           </IonCol>
         </IonRow>
       </IonGrid>

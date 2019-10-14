@@ -31,7 +31,7 @@ const TaskListComponent: React.FunctionComponent<RouteComponentProps> = (props: 
       >
         <IonCard button color="light">
           <IonCardHeader class="ion-no-padding">
-            <h1>{task.taskNumber}</h1>
+            <h1 style={{paddingLeft: "10px"}} >{task.taskNumber}</h1>
           </IonCardHeader>
           <IonGrid>
             <IonRow>
@@ -84,7 +84,7 @@ const TaskListComponent: React.FunctionComponent<RouteComponentProps> = (props: 
         </IonToolbar>
         <IonCardContent class="task-list">
           <IonContent>
-            <IonList>{TASKS.map(renderTaskCard)}</IonList>
+            <IonList style={{background: "white"}}>{TASKS.map(renderTaskCard)}</IonList>
           </IonContent>
         </IonCardContent>
       </IonCard>

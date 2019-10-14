@@ -8,7 +8,8 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
+  setupConfig 
 } from '@ionic/react';
 import { home, logIn } from 'ionicons/icons';
 import './App.css';
@@ -46,12 +47,17 @@ class AppComponent extends Component {
     }
   
     public componentDidMount() {
+      setupConfig({
+        mode: 'ios'
+      });
       firebase.auth.onAuthStateChanged(authUser => {
         authUser
           ? this.setState(() => ({ authUser }))
           : this.setState(() => ({ authUser: null }));
       });
     }
+
+
   render() {
     return (
       <IonApp class="ios">

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
-import { IonButton, IonText } from "@ionic/react";
+import { IonButton, IonText, IonRow, IonContent, IonCol } from "@ionic/react";
 
 type Props = {
-  pageNumber: any
+  pageNumber: any,
+  fileName: any
 }
 
 class PDFViewer extends Component<Props> {
@@ -13,11 +14,18 @@ class PDFViewer extends Component<Props> {
   }
 
   state = {
+    fileName: "/" + this.props.fileName + ".pdf",
     numPages: 0,
     pageNumber: this.props.pageNumber || 1,
     isLastPage: false,
     isFirstPage: true
   };
+  
+  componentDidUpdate(prevState: any) {
+    if(this.props.fileName !== prevState.fileName){
+      this.setState({fileName: "/" + this.props.fileName + ".pdf", pageNumber: this.props.pageNumber || 1})
+    }
+  }
 
   onDocumentLoadSuccess = ({ numPages }: any) => {
     this.setState({ numPages });
@@ -45,12 +53,12 @@ class PDFViewer extends Component<Props> {
     return (
       <div>
         <Document
-          file="/document.pdf"
+          file={this.state.fileName}
           onLoadSuccess={this.onDocumentLoadSuccess}
         >
-          <Page height={900} width={450} pageNumber={pageNumber} />
+          <Page height={590} pageNumber={pageNumber} />
         </Document>
-        <br/>
+        <div style={{paddingLeft: "120px"}}>
         <IonButton size="small" disabled={prevDisabled} onClick={this.prevPage}>
           Previous
         </IonButton>
@@ -60,6 +68,7 @@ class PDFViewer extends Component<Props> {
         <IonButton size="small" disabled={nextDisabled} onClick={this.nextPage}>
           Next
         </IonButton>
+        </div>
       </div>
     );
   }

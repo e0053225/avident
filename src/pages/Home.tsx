@@ -18,8 +18,9 @@ import {
 import { book, cart, construct, qrScanner } from "ionicons/icons";
 import TaskList from "../components/TaskList";
 import { HeaderBar } from "../components/HeaderBar";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, Link } from "react-router-dom";
 import { TASKS } from "../data/tasks";
+import * as ROUTES from "../constants/routes";
 
 const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
   props: RouteComponentProps<{}>
@@ -48,8 +49,9 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
             <IonCol size="4.5">
               <div className="welcome-text-box">
                 <IonText class="welcome-text">Welcome back, Randy!</IonText>
+                <SignOutButton />
               </div>
-              <SignOutButton />
+              
             </IonCol>
             <IonCol size="2.5">
               <IonCard class="header-card" color="light">
@@ -81,7 +83,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                 <IonCardContent class="header-card-content">
                   379 pts
                 </IonCardContent>
-                <IonButton color="dark" size="small" fill="outline">
+                <IonButton color="primary" size="small" fill="outline">
                   <IonCardContent class="header-card-footer">
                     Redeem Points
                   </IonCardContent>
@@ -106,6 +108,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                   </IonCard>
                 </IonCol>
                 <IonCol size="6">
+                  <Link to={ROUTES.ORDER_PART}>
                   <IonCard button color="light">
                     <IonCardHeader class="card-title">
                       Order Parts
@@ -114,6 +117,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       <IonIcon class="icon-size" icon={cart} />
                     </IonCardContent>
                   </IonCard>
+                  </Link>
                 </IonCol>
               </IonRow>
               <IonRow>
@@ -128,6 +132,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                   </IonCard>
                 </IonCol>
                 <IonCol size="6">
+                <Link to={ROUTES.PART_IDENTIFICATION}>
                   <IonCard button color="light">
                     <IonCardHeader class="card-title">
                       Identify Parts
@@ -136,6 +141,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       <IonIcon class="icon-size" icon={qrScanner} />
                     </IonCardContent>
                   </IonCard>
+                  </Link>
                 </IonCol>
               </IonRow>
             </IonCol>

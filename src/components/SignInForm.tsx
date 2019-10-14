@@ -77,7 +77,7 @@ export class SignInForm extends React.Component<
       <IonGrid>
             <IonRow class="row">
                 <IonText>
-                  <h2 no-margin margin-vertical className="text-center">
+                  <h2 className="text-center">
                     Sign In
                   </h2>
                 </IonText>

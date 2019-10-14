@@ -18,7 +18,8 @@ import {
   IonImg,
   IonProgressBar,
   IonItem,
-  IonButton
+  IonButton,
+  IonAlert
 } from "@ionic/react";
 import planeImg from "../assets/imgs/SIA-B787-10.png";
 import * as ROUTES from "../constants/routes";
@@ -27,20 +28,29 @@ const StepsListComponent: React.FunctionComponent<RouteComponentProps> = (
   props: RouteComponentProps
 ) => {
   const [task, setTask] = React.useState();
+  const [showAlert, setShowAlert] = React.useState(false);
 
   const renderStep = (step: any) => {
     return (
-      <IonItem key={step.stepNumber} color={step.stepNumber < task.currentStep ? "medium" : "grey"}>
-        <Link
-          key={task.taskNumber}
-          to={{ pathname: ROUTES.TASK, state: { selectedTask: task, selectedStep: step } }}
-        >
-          <IonButton disabled={step.stepNumber < task.currentStep} class="step-button" color={step.stepNumber < task.currentStep ? "success" : "warning"}>
+      <Link
+        key={step.stepNumber}
+        to={{
+          pathname: ROUTES.TASK,
+          state: { selectedTask: task, selectedStep: step }
+        }}
+      >
+        <IonItem color={step.stepNumber < task.currentStep ? "medium" : "light"}>
+          <IonButton
+            disabled={step.stepNumber < task.currentStep}
+            class="step-button"
+            color={step.stepNumber < task.currentStep ? "success" : "warning"}
+          >
             {step.stepNumber}
           </IonButton>
-        </Link>
+
           <IonLabel class="ion-text-wrap">{step.stepInstruction}</IonLabel>
-      </IonItem>
+        </IonItem>
+      </Link>
     );
   };
 
@@ -57,12 +67,23 @@ const StepsListComponent: React.FunctionComponent<RouteComponentProps> = (
               </IonText>
             </IonCol>
             <IonCol size="2.5">
-              <IonButton disabled={task.currentStep < task.totalSteps}>Complete</IonButton>
+              <IonButton color="success" onClick={() => setShowAlert(true)} disabled={task.currentStep < task.totalSteps}>
+                Complete
+              </IonButton>
+              <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header={'Success'}
+          message={'Task submitted for certification'}
+          buttons={['OK']}
+        />
             </IonCol>
           </IonRow>
         </IonCardTitle>
-        <div style={{textAlign:"right", padding:"5px 10px"}}>
-        <IonLabel>{task.currentStep - 1}/{task.totalSteps} steps completed</IonLabel>
+        <div style={{ textAlign: "right", padding: "5px 10px" }}>
+          <IonLabel>
+            {task.currentStep - 1}/{task.totalSteps} steps completed
+          </IonLabel>
         </div>
         <IonCardContent class="step-list">
           <IonContent>

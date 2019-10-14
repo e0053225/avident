@@ -1,3 +1,58 @@
+:root {
+  --ion-color-primary: #112B52;
+  --ion-color-primary-rgb: 17,43,82;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #0f2648;
+  --ion-color-primary-tint: #294063;  
+  --ion-color-secondary: #D0C8C0;
+  --ion-color-secondary-rgb: 208,200,192;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0,0,0;
+  --ion-color-secondary-shade: #b7b0a9;
+  --ion-color-secondary-tint: #d5cec6;
+  --ion-color-dark: #6E6E6E;
+  --ion-color-dark-rgb: 110,110,110;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255,255,255;
+  --ion-color-dark-shade: #616161;
+  --ion-color-dark-tint: #7d7d7d;
+  --ion-color-medium: #E3E3E3;
+  --ion-color-medium-rgb: 227,227,227;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0,0,0;
+  --ion-color-medium-shade: #c8c8c8;
+  --ion-color-medium-tint: #e6e6e6;
+  --ion-color-light: #f1f1f1;
+  --ion-color-light-rgb: 241,241,241;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0,0,0;
+  --ion-color-light-shade: #d4d4d4;
+  --ion-color-light-tint: #f2f2f2;
+  --ion-color-success: #7EB973;
+  --ion-color-success-rgb: 126,185,115;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-shade: #6fa365;
+  --ion-color-success-tint: #8bc081;
+  --ion-color-warning: #FCB130;
+  --ion-color-warning-rgb: 252,177,48;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-shade: #de9c2a;
+  --ion-color-warning-tint: #fcb945;
+  --ion-color-danger: #C44646;
+  --ion-color-danger-rgb: 196,70,70;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #ac3e3e;
+  --ion-color-danger-tint: #ca5959;
+  --ion-font-family: "Heebo";
+  --ion-background-color: #f1f1f1;
+  --ion-text-color: #404040;
+
+}
+
 .App {
   text-align: center;
 }
@@ -40,6 +95,7 @@
   text-align: center;
 }
 .task-list{
+  background: #FFFFFF;
   height: 320px;
   padding: 0;
 } 
@@ -111,4 +167,9 @@
 }
 a{
   text-decoration: none;
+}
+.order-parts-header{
+  background: #112B52;
+  text-align: center;
+  padding: 20px;
 }
