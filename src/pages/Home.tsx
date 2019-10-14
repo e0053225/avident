@@ -13,7 +13,8 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonIcon,
-  IonButton
+  IonButton,
+  IonImg
 } from "@ionic/react";
 import { book, cart, construct, qrScanner } from "ionicons/icons";
 import TaskList from "../components/TaskList";
@@ -21,6 +22,10 @@ import { HeaderBar } from "../components/HeaderBar";
 import { RouteComponentProps, Link } from "react-router-dom";
 import { TASKS } from "../data/tasks";
 import * as ROUTES from "../constants/routes";
+import OrderImg from "../assets/imgs/noun_cart.png";
+import manualImg from "../assets/imgs/noun_manual.png";
+import wrenchImg from "../assets/imgs/noun_Wrench.png";
+import identifyImg from "../assets/imgs/noun_qrscanner.png";
 
 const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
   props: RouteComponentProps<{}>
@@ -103,7 +108,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       Tech Manual
                     </IonCardHeader>
                     <IonCardContent class="card-icon">
-                      <IonIcon class="icon-size" icon={book} />
+                      <IonImg class="icon-size" src={manualImg} />
                     </IonCardContent>
                   </IonCard>
                 </IonCol>
@@ -114,7 +119,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       Order Parts
                     </IonCardHeader>
                     <IonCardContent class="card-icon">
-                      <IonIcon class="icon-size" icon={cart} />
+                    <IonImg class="icon-size" src={OrderImg} />
                     </IonCardContent>
                   </IonCard>
                   </Link>
@@ -127,7 +132,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       Report Defects
                     </IonCardHeader>
                     <IonCardContent class="card-icon">
-                      <IonIcon class="icon-size" icon={construct} />
+                      <IonImg class="icon-size" src={wrenchImg} />
                     </IonCardContent>
                   </IonCard>
                 </IonCol>
@@ -138,7 +143,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                       Identify Parts
                     </IonCardHeader>
                     <IonCardContent class="card-icon">
-                      <IonIcon class="icon-size" icon={qrScanner} />
+                      <IonImg class="icon-size" src={identifyImg} />
                     </IonCardContent>
                   </IonCard>
                   </Link>
