@@ -4,20 +4,10 @@ import { RouteComponentProps } from "react-router-dom";
 import {
   IonPage,
   IonContent,
-  IonHeader,
-  IonButton,
   IonCol,
   IonRow,
   IonText,
   IonGrid,
-  IonCard,
-  IonCardContent,
-  IonCardTitle,
-  IonLabel,
-  IonList,
-  IonItem,
-  IonImg,
-  IonProgressBar
 } from "@ionic/react";
 import { HeaderBar } from "../components/HeaderBar";
 import PDFViewer from "../components/PDFView";

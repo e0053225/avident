@@ -40,7 +40,7 @@
   text-align: center;
 }
 .task-list{
-  height: 270px;
+  height: 320px;
   padding: 0;
 } 
 .status-button{
@@ -99,6 +99,10 @@
   padding: 10px;
 
 }
+.step-list{
+  height: 270px;
+  padding: 0;
+} 
 .step-button{
   font-size: 20px;
   height: 35px;

@@ -64,7 +64,7 @@ const StepsListComponent: React.FunctionComponent<RouteComponentProps> = (
         <div style={{textAlign:"right", padding:"5px 10px"}}>
         <IonLabel>{task.currentStep - 1}/{task.totalSteps} steps completed</IonLabel>
         </div>
-        <IonCardContent class="task-list">
+        <IonCardContent class="step-list">
           <IonContent>
             <IonList>{task.steps.map(renderStep)}</IonList>
           </IonContent>

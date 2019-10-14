@@ -169,7 +169,11 @@ export const TASKS = [
         tailNumber: "9V-SCB",
         planeModel: "BOEING 787-10",
         progress: 0,
-        steps:[]
+        currentStep: 1,
+        totalSteps: 20,
+        steps:[],
+        references: [],
+        materials: []
     },
     {
         taskNumber: "TASK 32-11-02-603-001",
@@ -177,7 +181,11 @@ export const TASKS = [
         tailNumber: "9V-SCB",
         planeModel: "BOEING 787-10",
         progress: 100,
-        steps:[]
+        currentStep: 21,
+        totalSteps: 20,
+        steps:[],
+        references: [],
+        materials: []
     }
 ]
   
