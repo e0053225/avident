@@ -7,16 +7,13 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonButton,
   IonCol,
   IonRow,
-  IonInput,
-  IonText,
   IonGrid
 } from '@ionic/react';
 import './SignIn.css';
 
-const SignInComponent = ({ history }: { [key: string]: any }) => (
+const SignInPage = ({ history }: { [key: string]: any }) => (
   <IonPage>
   <IonHeader>
     <IonToolbar color="primary">
@@ -25,7 +22,6 @@ const SignInComponent = ({ history }: { [key: string]: any }) => (
   </IonHeader>
   <IonContent fullscreen={true} class="background-image">
   <IonGrid>
-    <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow><IonCol><h1></h1></IonCol></IonRow>
     <IonRow>
@@ -39,4 +35,4 @@ const SignInComponent = ({ history }: { [key: string]: any }) => (
   
 );
 
-export const SignIn = withRouter(SignInComponent);
+export const SignIn = withRouter(SignInPage);
