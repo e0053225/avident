@@ -21,6 +21,7 @@ import { StepsList } from "../components/StepsList";
 import { ReferenceList } from "../components/ReferenceList";
 import { MaterialsList } from "../components/MaterialsList";
 import { RouteComponentProps } from "react-router";
+import LogsImg from "../assets/imgs/noun_logs.png";
 
 const TaskOverviewPage: React.FunctionComponent<
   RouteComponentProps<{}>
@@ -37,12 +38,12 @@ const TaskOverviewPage: React.FunctionComponent<
                 <div className="welcome-text-box">
                   <IonImg src={planeImg} />
                   <IonText class="white">
-                    {task.tailNumber} {task.planeModel}
+                    {task.tailNumber}  {task.planeModel}
                   </IonText>
                   <hr />
-                  <IonText class="white">Arrival: 20 Sep 2019, 07:43</IonText>
+                  <IonText class="white">Arrival: 17 Oct 2019, 07:43</IonText>
                   <br />
-                  <IonText class="white">Departure: 21 Sep 2019, 09:55</IonText>
+                  <IonText class="white">Departure: 19 Oct 2019, 19:55</IonText>
                 </div>
               </IonCol>
               <IonCol size="2.5">
@@ -50,7 +51,7 @@ const TaskOverviewPage: React.FunctionComponent<
                   <IonCardTitle class="header-card-title">
                     Logs Gallery
                   </IonCardTitle>
-                  <IonCardContent class="header-card-content">5</IonCardContent>
+                  <IonCardContent class="header-card-content"><IonImg class="icon-size" src={LogsImg} /></IonCardContent>
                   <IonCardContent class="header-card-footer">
                     9 pages captured
                   </IonCardContent>
@@ -62,7 +63,9 @@ const TaskOverviewPage: React.FunctionComponent<
                     Time Left
                   </IonCardTitle>
                   <IonCardContent class="header-card-content">
+                    <IonText color="danger">
                     26h
+                    </IonText>
                   </IonCardContent>
                 </IonCard>
               </IonCol>
@@ -72,7 +75,9 @@ const TaskOverviewPage: React.FunctionComponent<
                     Progress
                   </IonCardTitle>
                   <IonCardContent class="header-card-content">
+                    <IonText color="warning">
                     {task.progress}%
+                    </IonText>
                   </IonCardContent>
                   <IonCardContent class="header-card-footer">
                     <IonProgressBar

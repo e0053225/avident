@@ -19,7 +19,7 @@ export const HeaderBar = () => {
     <IonToolbar>
       <IonButtons slot="start">
         <IonBackButton defaultHref="home" />
-      </IonButtons>
+      </IonButtons> 
       <IonChip slot="end">
         <IonIcon icon={notifications} />
         <IonBadge color="warning">3</IonBadge>

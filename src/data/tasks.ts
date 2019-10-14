@@ -99,20 +99,36 @@ export const TASKS = [
                         reference: "AMM 09-11-00/201"
                     },
                     {
-                        instruction: "Do this task: “Installation of the Door Locks on the Wing Landing Gear”",
+                        instruction: "Do this task: Installation of the Door Locks on the Wing Landing Gear",
                         reference: "AMM 32-00-30/201"
                     },
                     {
-                        instruction: "Do this task: “Installation of the Door Locks on the Body Landing Gear”",
+                        instruction: "Do this task: Installation of the Door Locks on the Body Landing Gear",
                         reference: "AMM 32-00-30/201"
                     },
                     {
                         instruction: "Remove the nut (18)",
-                        reference: "AMM 32-11-23/401"
+                        reference: "AMM 32-11-23-401"
                     },
                     {
                         instruction: "Remove the hook (4) and the lever (3) from the frame (1)",
-                        reference: "AMM 32-11-23/401"
+                        reference: "AMM 32-11-23-401"
+                    },
+                    {
+                        instruction: "Remove the bolt (22) from the spindle bracket (8).",
+                        reference: "AMM 32-11-23-401"
+                    },
+                    {
+                        instruction: "Remove the nut (6) and the shim (7) from the torsion link pin.”",
+                        reference: "AMM 32-11-23-401"
+                    },
+                    {
+                        instruction: "Remove the frame (1).",
+                        reference: "AMM 32-11-23-401"
+                    },
+                    {
+                        instruction: "Loosen clamp bolts (10) and remove the roller support assembly (5) and the delrin bushing (17).",
+                        reference: "AMM 32-11-23-401"
                     }
                 ]
             },

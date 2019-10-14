@@ -54,15 +54,14 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
             <IonCol size="4.5">
               <div className="welcome-text-box">
                 <IonText class="welcome-text">Welcome back, Randy!</IonText>
-                <SignOutButton />
+                {/* <SignOutButton /> */}
               </div>
-              
             </IonCol>
             <IonCol size="2.5">
               <IonCard class="header-card" color="light">
                 <IonCardTitle class="header-card-title">{date}</IonCardTitle>
                 <IonCardContent class="header-card-content">
-                  {scheduledTask}
+                  <IonText color="danger">{scheduledTask}</IonText>
                 </IonCardContent>
                 <IonCardContent class="header-card-footer">
                   Scheduled Task Remaining
@@ -74,7 +73,9 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                 <IonCardTitle class="header-card-title">
                   Task Completed
                 </IonCardTitle>
-                <IonCardContent class="header-card-content">56</IonCardContent>
+                <IonCardContent class="header-card-content">
+                  <IonText color="success">56</IonText>
+                </IonCardContent>
                 <IonCardContent class="header-card-footer">
                   You are level 17
                 </IonCardContent>
@@ -86,7 +87,7 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                   Total Points
                 </IonCardTitle>
                 <IonCardContent class="header-card-content">
-                  379 pts
+                  <IonText color="warning">379 pts</IonText>
                 </IonCardContent>
                 <IonButton color="primary" size="small" fill="outline">
                   <IonCardContent class="header-card-footer">
@@ -114,14 +115,14 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                 </IonCol>
                 <IonCol size="6">
                   <Link to={ROUTES.ORDER_PART}>
-                  <IonCard button color="light">
-                    <IonCardHeader class="card-title">
-                      Order Parts
-                    </IonCardHeader>
-                    <IonCardContent class="card-icon">
-                    <IonImg class="icon-size" src={OrderImg} />
-                    </IonCardContent>
-                  </IonCard>
+                    <IonCard button color="light">
+                      <IonCardHeader class="card-title">
+                        Order Parts
+                      </IonCardHeader>
+                      <IonCardContent class="card-icon">
+                        <IonImg class="icon-size" src={OrderImg} />
+                      </IonCardContent>
+                    </IonCard>
                   </Link>
                 </IonCol>
               </IonRow>
@@ -137,15 +138,15 @@ const HomePage: React.FunctionComponent<RouteComponentProps<{}>> = (
                   </IonCard>
                 </IonCol>
                 <IonCol size="6">
-                <Link to={ROUTES.PART_IDENTIFICATION}>
-                  <IonCard button color="light">
-                    <IonCardHeader class="card-title">
-                      Identify Parts
-                    </IonCardHeader>
-                    <IonCardContent class="card-icon">
-                      <IonImg class="icon-size" src={identifyImg} />
-                    </IonCardContent>
-                  </IonCard>
+                  <Link to={ROUTES.PART_IDENTIFICATION}>
+                    <IonCard button color="light">
+                      <IonCardHeader class="card-title">
+                        Identify Parts
+                      </IonCardHeader>
+                      <IonCardContent class="card-icon">
+                        <IonImg class="icon-size" src={identifyImg} />
+                      </IonCardContent>
+                    </IonCard>
                   </Link>
                 </IonCol>
               </IonRow>

@@ -32,7 +32,10 @@ const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
   if (task && step) {
     const renderInstructions = (instruction: any) => {
       return (
-        <IonItem key={instruction.instruction} color="medium">
+        <IonItem onClick={() => {
+          setFile(instruction.reference.split("/")[0]);
+          setPage(1);
+        }} key={instruction.instruction} color="medium">
           <IonCol>
             <IonText class="ion-text-wrap">{instruction.instruction}</IonText>
           </IonCol>
@@ -62,7 +65,13 @@ const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
                   </IonText>
                 </div>
                 <div style={{ background: "white" }}>
-                  <IonItem color="white">
+                  <IonItem
+                    onClick={() => {
+                      setFile(step.stepReference.split("/")[0]);
+                      setPage(1);
+                    }}
+                    color="white"
+                  >
                     <IonCol size="2">
                       <IonButton
                         disabled={step.stepNumber < task.currentStep}
@@ -82,23 +91,17 @@ const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
                       </IonText>
                     </IonCol>
                     <IonCol size="4">
-                      <IonButton
-                        fill="outline"
-                        onClick={() => {
-                          setFile(step.stepReference.split("/")[0]);
-                          setPage(1);
-                        }}
-                      >
-                        <IonText class="ion-text-wrap">
-                          {step.stepReference}
-                        </IonText>
-                      </IonButton>
+                      <IonText class="ion-text-wrap">
+                        {step.stepReference}
+                      </IonText>
                     </IonCol>
                   </IonItem>
                 </div>
+                <IonContent style={{height: "400px"}}>
                 <IonList>
                   {step.stepInstructionList.map(renderInstructions)}
                 </IonList>
+                </IonContent>
                 <IonRow
                   style={{ width: "500px", position: "fixed", bottom: "50px" }}
                 >
@@ -108,11 +111,27 @@ const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
                         <IonItem>
                           <IonGrid>
                             <IonRow>
-                              <IonCol size="5"><IonText color="dark" style={{fontSize: "12px"}}>17 Oct 2019 09:38PM</IonText></IonCol>
-                              <IonCol size="5"><IonText color="dark" style={{fontSize: "12px"}}>AMM TASK 09-11-00</IonText></IonCol>
+                              <IonCol size="5">
+                                <IonText
+                                  color="dark"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                  17 Oct 2019 09:38PM
+                                </IonText>
+                              </IonCol>
+                              <IonCol size="5">
+                                <IonText
+                                  color="dark"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                  AMM TASK 09-11-00
+                                </IonText>
+                              </IonCol>
                             </IonRow>
                             <IonRow>
-                              <IonCol style={{fontWeight: "bold"}} size="5">Engineer: Deepak C.</IonCol>
+                              <IonCol style={{ fontWeight: "bold" }} size="5">
+                                Engineer: Deepak C.
+                              </IonCol>
                               <IonCol size="5">Ground pin installed</IonCol>
                             </IonRow>
                           </IonGrid>
@@ -120,11 +139,27 @@ const TaskComponent: React.FunctionComponent<RouteComponentProps> = (
                         <IonItem>
                           <IonGrid>
                             <IonRow>
-                              <IonCol size="5"><IonText color="dark" style={{fontSize: "12px"}}>18 Oct 2019 01:45PM</IonText></IonCol>
-                              <IonCol size="5"><IonText color="dark" style={{fontSize: "12px"}}>AMM TASK 11-32-00</IonText></IonCol>
+                              <IonCol size="5">
+                                <IonText
+                                  color="dark"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                  18 Oct 2019 01:45PM
+                                </IonText>
+                              </IonCol>
+                              <IonCol size="5">
+                                <IonText
+                                  color="dark"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                  AMM TASK 11-32-00
+                                </IonText>
+                              </IonCol>
                             </IonRow>
                             <IonRow>
-                              <IonCol style={{fontWeight: "bold"}} size="5">Engineer: Leonard Neo</IonCol>
+                              <IonCol style={{ fontWeight: "bold" }} size="5">
+                                Engineer: Leonard Neo
+                              </IonCol>
                               <IonCol size="5">
                                 Circuit breaker locked. Unlock before takeoff.
                               </IonCol>

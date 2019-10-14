@@ -43,11 +43,10 @@ const StepsListComponent: React.FunctionComponent<RouteComponentProps> = (
           <IonButton
             disabled={step.stepNumber < task.currentStep}
             class="step-button"
-            color={step.stepNumber < task.currentStep ? "success" : "warning"}
+            color={step.stepNumber < task.currentStep ? "success" : "dark"}
           >
             {step.stepNumber}
           </IonButton>
-
           <IonLabel class="ion-text-wrap">{step.stepInstruction}</IonLabel>
         </IonItem>
       </Link>
