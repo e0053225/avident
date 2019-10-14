@@ -13,7 +13,7 @@ import {
   IonImg,
   IonProgressBar
 } from "@ionic/react";
-import planeImg from "../assets/imgs/SIA-B747.png";
+import planeImg from "../assets/imgs/SIA-B787-10.png";
 import { HeaderBar } from "../components/HeaderBar";
 import * as ROUTES from "../constants/routes";
 import { Link } from "react-router-dom";

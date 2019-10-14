@@ -18,7 +18,7 @@ import {
   IonImg,
   IonProgressBar
 } from "@ionic/react";
-import planeImg from "../assets/imgs/SIA-B747.png";
+import planeImg from "../assets/imgs/SIA-B787-10.png";
 import * as ROUTES from "../constants/routes";
 import { TASKS, TaskInfo } from "../data/tasks";
 
