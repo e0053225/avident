@@ -54,7 +54,8 @@
   text-align: center;
 }
 .icon-size{
-  font-size: 100px;
+  height: 150px;
+  width:150px;
   padding-bottom: 15px;
   color: #112B52;
 }
