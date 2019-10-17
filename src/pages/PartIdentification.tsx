@@ -23,46 +23,21 @@ import * as ROUTES from "../constants/routes";
 import "./PartIdentification.css";
 import ReactDOM from "react-dom";
 import { App } from "../App";
+import { CameraComponent } from "../components/Camera";
+import { HeaderBar } from "../components/HeaderBar";
 
 const MODEL_PATH = process.env.PUBLIC_URL + "/model_web";
 
 const PartIdentificationComponent = ({ history }: { [key: string]: any }) => {
-
   return (
     <IonPage>
-      <IonToolbar>
-        <IonChip slot="end">
-          <IonIcon icon={notifications} />
-          <IonBadge color="warning">3</IonBadge>
-        </IonChip>
-
-        <IonChip slot="end">
-          <IonLabel>Randy Tan</IonLabel>
-          <IonAvatar>
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-          </IonAvatar>
-        </IonChip>
-      </IonToolbar>
-      <IonContent fullscreen={true}>
+      <HeaderBar />
+      <IonContent fullscreen={true} scrollY={false}>
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonRow class="camera"> </IonRow>
-
-              <IonRow>
-              <div className ="center">
-                <IonFabButton>
-                  
-                  <IonIcon icon={camera}></IonIcon>
-                  <></>
-                 
-                </IonFabButton>
-                </div>
-              </IonRow>
-
-              <IonRow></IonRow>
+              <CameraComponent/>
             </IonCol>
-
             <IonCol>
               <IonRow>
                 <IonText class="bluetext"> Possible Matches Found</IonText>
@@ -82,4 +57,3 @@ const authCondition = (authUser: any) => !!authUser;
 export const PartIdentification = withAuthorization(authCondition)(
   PartIdentificationComponent
 );
-
