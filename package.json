@@ -17,7 +17,10 @@
     "@types/react-pdf": "^4.0.3",
     "@types/react-router": "^5.1.1",
     "@types/react-router-dom": "^5.1.0",
+    "axios": "^0.19.0",
+    "cloud-annotations": "^1.1.10",
     "firebase": "^7.1.0",
+    "fs": "0.0.1-security",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-pdf": "^4.1.0",
@@ -25,7 +28,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "recompose": "^0.30.0",
-    "typescript": "3.6.3"
+    "typescript": "3.6.3",
+    "watson-developer-cloud": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
