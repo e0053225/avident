@@ -6,17 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 import '@ionic/core/css/core.css';
 import '@ionic/core/css/ionic.bundle.css';
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 import './index.css';
 import { pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
-
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// Call the element loader after the app has been rendered the first time
-defineCustomElements(window);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
